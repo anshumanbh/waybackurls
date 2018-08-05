@@ -114,7 +114,7 @@ func main() {
 				resp, err := fetch(domain)
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "failed to fetch URLs for [%s]\n", domain)
-					f.WriteString("http://" + domain)
+					f.WriteString(domain)
 					return
 				}
 				for _, r := range resp {
@@ -199,7 +199,7 @@ func getWaybackURLs(domain string) ([]wurl, error) {
 			out = append(out, wurl{date: urls[1], url: urls[2]})
 		}
 	} else {
-		out = append(out, wurl{date: "NA", url: "http://" + domain})
+		out = append(out, wurl{date: "NA", url: domain})
 	}
 
 	return out, nil
@@ -242,7 +242,7 @@ func getCommonCrawlURLs(domain string) ([]wurl, error) {
 			out = append(out, wurl{date: wrapper.Timestamp, url: wrapper.URL})
 		}
 	} else {
-		out = append(out, wurl{date: "NA", url: "http://" + domain})
+		out = append(out, wurl{date: "NA", url: domain})
 	}
 
 	return out, nil
