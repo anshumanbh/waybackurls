@@ -63,7 +63,7 @@ func validateParams() {
 }
 
 const wayBackURL = "http://web.archive.org/cdx/search/cdx?url=*.%s/*&output=json&collapse=urlkey"
-const commonCrawlURL = "http://index.commoncrawl.org/CC-MAIN-2018-22-index?url=*.%s&output=json"
+const commonCrawlURL = "http://index.commoncrawl.org/CC-MAIN-2018-22-index?url=*.%s/*&output=json"
 
 func main() {
 
